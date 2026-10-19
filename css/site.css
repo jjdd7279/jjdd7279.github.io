@@ -1153,3 +1153,15 @@ main > .section:not(.dark), .room-top, .room-gallery, .b-gallery, main > .sectio
 .sp-index { text-transform: none; letter-spacing: 0.24em; }
 
 .dark { background-color: #fcf3f5; }
+
+/* v24 深色照片底上的標題：白字、改用粗黑體，背景加深（修正被「標題加深」規則影響的地方） */
+.cta-band .h-serif, .page-hero .h-serif, .b-hero .h-serif, .sp-content .h-serif { color: #fff; }
+.cta-band::before { background: linear-gradient(100deg, rgba(20, 14, 18, 0.72), rgba(20, 14, 18, 0.5)) !important; }
+.cta-zhanqian::before { background: linear-gradient(100deg, rgba(92, 14, 32, 0.88), rgba(92, 14, 32, 0.62)) !important; }
+.cta-ximen::before { background: linear-gradient(100deg, rgba(96, 64, 22, 0.88), rgba(96, 64, 22, 0.62)) !important; }
+.cta-inner .h-serif {
+  font-family: var(--sans); font-weight: 700; font-size: clamp(26px, 3.2vw, 44px); letter-spacing: 0.12em; line-height: 1.45;
+  color: #fff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35), 0 6px 26px rgba(0, 0, 0, 0.45);
+}
+.cta-inner .eyebrow.light { font-weight: 600; letter-spacing: 0.3em; }
+.page-hero .h-serif { text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35); }
