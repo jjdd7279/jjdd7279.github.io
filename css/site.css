@@ -1136,3 +1136,20 @@ main > .section, .b-gallery, .site-footer { overflow-x: clip; }
 .rr-feats li { color: var(--text); background: rgba(255, 255, 255, 0.6); }
 .ci-branch, .footer-branch { font-weight: 400; }
 main > .section:not(.dark), .room-top, .room-gallery, .b-gallery, main > .section:not(.dark):nth-of-type(even) { background-color: #fffafb; }
+
+/* v23 頁尾：改為很淡的粉白，不放花紋，文字加深 */
+.site-footer {
+  background-color: #fdf6f8;
+  background-image: linear-gradient(180deg, #fbeef2 0%, #fdf7f9 40%);
+  background-size: auto;
+  color: #241f22;
+  border-top: 4px solid var(--accent);
+}
+.site-footer .footer-zh, .site-footer .footer-branch p, .site-footer .footer-branch a, .site-footer .footer-nav a, .site-footer .copy { color: #2a2427; }
+.site-footer .footer-tag, .site-footer .fb-name span { color: #5a4e54; opacity: 1; }
+.site-footer .footer-branch p { font-size: 15.5px; }
+.site-footer .footer-nav { font-size: 14px; }
+.site-footer .footer-bottom { opacity: 1; }
+.sp-index { text-transform: none; letter-spacing: 0.24em; }
+
+.dark { background-color: #fcf3f5; }
