@@ -1,0 +1,15 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'>
+<g fill='none' stroke='#b6955f' stroke-width='1' stroke-opacity='.16'><path d='M90 0L180 90L90 180L0 90Z'/></g>
+<g fill='#b6955f' fill-opacity='.05' stroke='#b6955f' stroke-opacity='.32' stroke-width='1'><g transform="translate(90 96) rotate(0) scale(0.9)">
+  <path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(-40)"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(40)"/>
+  <path d="M0 4C-6 12-17 15-26 12C-20 4-9 1 0 4Z"/><circle cx="0" cy="0" r="2.2" fill="#b6955f" fill-opacity=".35" stroke="none"/></g><g transform="translate(0 10) rotate(0) scale(0.55)">
+  <path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(-40)"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(40)"/>
+  <path d="M0 4C-6 12-17 15-26 12C-20 4-9 1 0 4Z"/><circle cx="0" cy="0" r="2.2" fill="#b6955f" fill-opacity=".35" stroke="none"/></g><g transform="translate(180 10) rotate(0) scale(0.55)">
+  <path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(-40)"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(40)"/>
+  <path d="M0 4C-6 12-17 15-26 12C-20 4-9 1 0 4Z"/><circle cx="0" cy="0" r="2.2" fill="#b6955f" fill-opacity=".35" stroke="none"/></g><g transform="translate(0 190) rotate(0) scale(0.55)">
+  <path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(-40)"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(40)"/>
+  <path d="M0 4C-6 12-17 15-26 12C-20 4-9 1 0 4Z"/><circle cx="0" cy="0" r="2.2" fill="#b6955f" fill-opacity=".35" stroke="none"/></g><g transform="translate(180 190) rotate(0) scale(0.55)">
+  <path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(-40)"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z"/><path d="M0 0C-8-11-7-26 0-33C7-26 8-11 0 0Z" transform="rotate(40)"/>
+  <path d="M0 4C-6 12-17 15-26 12C-20 4-9 1 0 4Z"/><circle cx="0" cy="0" r="2.2" fill="#b6955f" fill-opacity=".35" stroke="none"/></g></g>
+<g fill='#b6955f' fill-opacity='.28'><circle cx='90' cy='0' r='1.6'/><circle cx='0' cy='90' r='1.6'/><circle cx='180' cy='90' r='1.6'/><circle cx='90' cy='180' r='1.6'/></g>
+</svg>
