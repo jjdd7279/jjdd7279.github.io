@@ -211,7 +211,7 @@ if (cform) {
     };
     if (f.website) return;
     if (!f.name.trim()) return showErr(d.errName);
-    if (!f.phone.trim() && !f.email.trim()) return showErr(d.errContact);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) return showErr(d.errContact);
     if (!f.message.trim()) return showErr(d.errMessage);
     const btn = $('button[type=submit]', cform);
     const label = btn.innerHTML;

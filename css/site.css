@@ -1165,3 +1165,5 @@ main > .section:not(.dark), .room-top, .room-gallery, .b-gallery, main > .sectio
 }
 .cta-inner .eyebrow.light { font-weight: 600; letter-spacing: 0.3em; }
 .page-hero .h-serif { text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35); }
+
+.field .opt { color: var(--stone); font-size: 12px; letter-spacing: 0.05em; }
