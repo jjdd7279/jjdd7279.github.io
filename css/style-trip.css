@@ -1,0 +1,234 @@
+/* ==========================================================
+   旅行手帳版：拍立得照片、紙膠帶、郵戳印章、筆記本橫線、手寫標籤
+   疊加在 bloom.css 之上，只改外觀。
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap');
+body.style-trip {
+  --r-lg: 10px; --r-md: 6px;
+  --ink: #33282c; --ink-2: #55474d; --ink-3: #85767c;
+  --paper: #fffdf8;
+  --tape: rgba(244, 170, 196, 0.62);
+  --tape-2: rgba(240, 214, 150, 0.7);
+  --hand: 'Caveat', var(--sans);
+  --shadow: 0 16px 30px -14px rgba(90, 50, 70, 0.4); --shadow-sm: 0 7px 14px -8px rgba(90, 50, 70, 0.38);
+}
+.style-trip .bl-blobs i { opacity: 0.6; }
+
+/* 文字：手寫小標＋螢光筆畫線的標題 */
+.style-trip .eyebrow { font-family: var(--hand); font-style: normal; font-weight: 700; font-size: 24px; letter-spacing: 0.02em; line-height: 1.2; rotate: -2deg; transform-origin: 0 50%; }
+.style-trip .section-head .h-serif, .style-trip .b-intro .h-serif, .style-trip .rr-body .h-serif, .style-trip .rd-summary { display: inline; background: linear-gradient(transparent 62%, var(--pink-200) 62%, var(--pink-200) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 0.1em; }
+.style-trip .section-head .eyebrow, .style-trip .rr-body .eyebrow { display: flex; margin-bottom: 4px; }
+
+/* 拍立得相框（白邊、下方留白、微微歪斜、紙膠帶） */
+.style-trip .bl-door-frame, .style-trip .bl-arch, .style-trip .bl-hero-mini, .style-trip .rc-img, .style-trip .philo-img, .style-trip .rr-img, .style-trip .hr-item, .style-trip .bl-snap, .style-trip .nc-img, .style-trip .cc-img, .style-trip .hrm-img, .style-trip .od-img { position: relative; background: #fff; border-radius: 3px !important; box-shadow: var(--shadow), 0 0 0 1px rgba(90, 50, 70, 0.07) !important; overflow: visible; }
+.style-trip .bl-door-frame { padding: 12px 12px 52px; rotate: -2.5deg; transition: rotate 0.6s var(--ease), translate 0.6s var(--ease); }
+.style-trip .bl-door:nth-of-type(2) .bl-door-frame { rotate: 2.5deg; }
+.style-trip .bl-door:hover .bl-door-frame { rotate: 0deg; translate: 0 -10px; }
+.style-trip .bl-door-pane { border-radius: 2px; box-shadow: none !important; background: var(--pink-50); }
+.style-trip .bl-door-no { left: auto; right: 6px; top: auto; bottom: -46px; width: auto; background: none; padding: 0; font-family: var(--hand); font-style: normal; font-weight: 700; font-size: 26px; line-height: 1.2; }
+.style-trip .bl-door-no::before { content: 'No. '; }
+/* 紙膠帶 */
+.style-trip .bl-door-frame::before, .style-trip .bl-arch::before, .style-trip .bl-hero-mini::before, .style-trip .rc-img::before, .style-trip .philo-img::before, .style-trip .rr-img::after, .style-trip .contact-form-wrap::before, .style-trip .book-card::before, .style-trip .loc-teaser::before, .style-trip .article::before { content: ''; position: absolute; left: 50%; top: -15px; width: 118px; height: 30px; margin-left: -59px; background: var(--tape); rotate: -3deg; z-index: 4; box-shadow: 0 1px 2px rgba(90, 50, 70, 0.12); -webkit-mask: linear-gradient(90deg, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%); mask: linear-gradient(90deg, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%); }
+.style-trip .bl-door:nth-of-type(2) .bl-door-frame::before, .style-trip .room-card:nth-child(even) .rc-img::before, .style-trip .room-row.is-flip .rr-img::after, .style-trip .book-card::before { background: var(--tape-2); rotate: 4deg; }
+.style-trip .bl-arch { height: min(64vh, 580px); padding: 14px 14px 58px; rotate: 2deg; }
+.style-trip .bl-arch img { height: 100%; border-radius: 2px; }
+.style-trip .bl-hero.is-sub .bl-arch { padding: 10px 10px 40px; rotate: 1.5deg; }
+.style-trip .bl-hero-mini { border-radius: 3px !important; padding: 8px 8px 30px; rotate: -7deg; aspect-ratio: 1 / 1.12; overflow: visible; }
+.style-trip .bl-hero-mini::before { width: 70px; height: 22px; margin-left: -35px; top: -11px; background: var(--tape-2); }
+.style-trip .bl-hero-mini img { border-radius: 2px; }
+.style-trip .rc-img { padding: 10px 10px 40px; aspect-ratio: 4 / 4.6; rotate: -1.5deg; transition: rotate 0.5s var(--ease), translate 0.5s var(--ease); }
+.style-trip .rc-img img, .style-trip .philo-img img, .style-trip .rr-img img, .style-trip .nc-img img, .style-trip .cc-img img { border-radius: 2px !important; box-shadow: none; }
+.style-trip .room-card:nth-child(even) .rc-img { rotate: 1.8deg; }
+.style-trip .room-card:hover .rc-img { rotate: 0deg; translate: 0 -8px; transform: none; }
+.style-trip .rc-img::before { width: 84px; height: 24px; margin-left: -42px; top: -12px; }
+.style-trip .rc-chip { top: auto; bottom: 52px; left: 18px; transform: none; font-family: var(--hand); font-size: 19px; font-weight: 700; background: none; padding: 0; }
+.style-trip .rc-chip .dot { display: none; }
+.style-trip .rc-en { font-family: var(--hand); font-style: normal; font-size: 20px; color: var(--accent); }
+.style-trip .philo-img { padding: 14px 14px 60px; rotate: -2deg; aspect-ratio: 4 / 4.8; }
+.style-trip .rr-img { padding: 12px 12px 46px; rotate: -1.5deg; }
+.style-trip .room-row.is-flip .rr-img { rotate: 1.5deg; }
+.style-trip .rr-img::before { display: none; }
+.style-trip .rr-img::after { top: -14px; }
+.style-trip .loc-map { border-radius: 4px; box-shadow: 0 0 0 12px #fff, var(--shadow); rotate: 1deg; }
+.style-trip .gallery-swiper .swiper-slide { border-radius: 3px; background: #fff; padding: 10px 10px 34px; box-shadow: var(--shadow-sm); }
+.style-trip .gallery-swiper .swiper-slide-active { border-radius: 3px; box-shadow: var(--shadow); }
+.style-trip .room-main { border-radius: 4px; box-shadow: 0 0 0 12px #fff, var(--shadow); }
+.style-trip .hr-item { padding: 8px 8px 30px; overflow: visible; rotate: -2deg; }
+.style-trip .hr-item:nth-child(3n) { rotate: 2.5deg; } .style-trip .hr-item:nth-child(4n) { rotate: -3.5deg; }
+.style-trip .hr-item:hover { rotate: 0deg; }
+.style-trip .hr-item img { height: 100%; border-radius: 2px; }
+.style-trip .hr-item span { left: 12px; bottom: 5px; background: none; padding: 0; font-family: var(--hand); font-size: 19px; font-weight: 700; }
+.style-trip .hr-item span .dot { display: none; }
+.style-trip .home-ribbon { padding-top: 50px; padding-bottom: 30px; }
+.style-trip .hrm-img { padding: 5px 5px 16px; rotate: -3deg; }
+.style-trip .nc-img { padding: 8px 8px 28px; rotate: -2deg; height: max-content; }
+.style-trip .cc-img { margin: 12px; padding: 8px 8px 30px; rotate: -2deg; }
+
+/* 郵戳印章（原本的旋轉徽章） */
+.style-trip .bl-badge { background: none; box-shadow: none; border: 3px double var(--accent); rotate: -14deg; opacity: 0.9; }
+.style-trip .bl-badge::after { content: ''; position: absolute; inset: 9px; border: 1.5px dashed var(--accent); border-radius: 50%; opacity: 0.7; }
+.style-trip .bl-badge svg { animation: none; }
+.style-trip .bl-badge img { width: 34%; opacity: 0.85; }
+.style-trip .bl-home-badge { --accent: var(--rose); }
+.style-trip .bl-home-badge p { font-family: var(--hand); font-size: 22px; letter-spacing: 0.02em; rotate: -4deg; }
+.style-trip.is-cjk .bl-home-badge p { font-family: var(--sans); font-size: 14px; }
+
+/* 首頁 */
+.style-trip .bl-home-title { display: inline; background: linear-gradient(transparent 64%, var(--pink-200) 64%, var(--pink-200) 92%, transparent 92%); padding: 0 0.15em; }
+.style-trip .bl-home-tag { margin-top: 12px; font-family: var(--hand); font-size: 24px; color: var(--rose); rotate: -1deg; }
+.style-trip.is-cjk .bl-home-tag { font-family: var(--sans); font-size: 16px; color: var(--ink-2); rotate: none; }
+.style-trip .bl-doors { gap: clamp(30px, 12vw, 210px); max-width: 980px; }
+.style-trip .bl-door-frame { height: clamp(260px, 42vh, 460px); }
+.style-trip .bl-door-info { margin-top: 26px; }
+.style-trip .bl-door-label { font-family: var(--hand); font-style: normal; font-weight: 700; font-size: 22px; }
+.style-trip .bl-snaps { display: block; }
+.style-trip .bl-snap { position: absolute; z-index: 1; width: clamp(96px, 9vw, 150px); aspect-ratio: 1 / 1.12; padding: 6px 6px 24px; }
+.style-trip .bl-snap img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
+.style-trip .bl-snap:nth-child(1) { left: 2.5%; top: 26%; rotate: -11deg; }
+.style-trip .bl-snap:nth-child(2) { right: 2.5%; top: 22%; rotate: 9deg; }
+.style-trip .bl-snap:nth-child(3) { left: 4%; bottom: 9%; rotate: 7deg; }
+.style-trip .bl-snap:nth-child(4) { right: 4%; bottom: 12%; rotate: -8deg; }
+.style-trip .bl-snap::before { content: ''; position: absolute; left: 50%; top: -9px; width: 54px; height: 18px; margin-left: -27px; background: var(--tape-2); rotate: -6deg; }
+.style-trip .bl-snap:nth-child(even)::before { background: var(--tape); rotate: 5deg; }
+@media (max-width: 1180px) { .style-trip .bl-snaps { display: none; } }
+
+/* 館別主視覺 */
+.style-trip .bl-hero-title { display: inline-block; position: relative; }
+.style-trip .bl-hero-title::after { content: ''; position: absolute; left: -2%; right: -2%; bottom: 0.1em; height: 0.2em; background: var(--accent-soft); border-radius: 40% 60% 50% 50% / 100% 100% 60% 60%; z-index: -1; rotate: -1deg; }
+.style-trip .bl-hero-full { font-family: var(--hand); font-size: 26px; font-weight: 700; color: var(--accent); }
+.style-trip.is-cjk .bl-hero-full { font-family: var(--sans); font-size: 18px; }
+.style-trip .bl-hero-media > .bl-badge { right: -5%; top: auto; bottom: 4%; z-index: 5; }
+
+/* 按鈕：行李吊牌 */
+.style-trip .btn { border-radius: 8px; padding-left: 40px; font-weight: 700; }
+.style-trip .btn::before { content: ''; position: absolute; left: 14px; top: 50%; width: 11px; height: 11px; margin-top: -5.5px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25); }
+.style-trip .btn-solid, .style-trip .btn-branch { box-shadow: var(--shadow-sm); rotate: -1deg; }
+.style-trip .btn-line { border: 1.5px dashed var(--accent); background: var(--paper); rotate: 1deg; }
+.style-trip .btn-line::before { background: var(--accent-soft); box-shadow: none; }
+.style-trip .btn:hover { rotate: 0deg; }
+.style-trip .btn-book { border-radius: 8px; }
+.style-trip .link-arrow { font-family: var(--hand); font-size: 23px; font-weight: 700; letter-spacing: 0.01em; background-image: none; border-bottom: 2px dashed currentColor; padding-bottom: 0; }
+.style-trip.is-cjk .link-arrow { font-family: var(--sans); font-size: 15px; }
+
+/* 紙卡與便條 */
+.style-trip .facts > div, .style-trip .feat-grid li, .style-trip .loc-list li, .style-trip .pillars li, .style-trip .faq-item, .style-trip .news-card, .style-trip .offer-card, .style-trip .bp-card, .style-trip .ci-branch, .style-trip .footer-branch, .style-trip .contact-form-wrap, .style-trip .article, .style-trip .book-card, .style-trip .loc-teaser, .style-trip .od-meta > div, .style-trip .book-option, .style-trip .hrm-card { background: var(--paper); box-shadow: var(--shadow-sm), 0 0 0 1px rgba(90, 50, 70, 0.08); }
+.style-trip .contact-form-wrap, .style-trip .book-card, .style-trip .loc-teaser, .style-trip .article { position: relative; overflow: visible; }
+.style-trip .pillars li { background: #fff6c9; rotate: -2deg; padding-top: 30px; position: relative; }
+.style-trip .pillars li:nth-child(2) { background: #ffe3ec; rotate: 1.5deg; translate: 0 10px; }
+.style-trip .pillars li:nth-child(3) { background: #e2f3ea; rotate: -1deg; }
+.style-trip .pillars li::before { content: ''; position: absolute; left: 50%; top: 8px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--rose); box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25); }
+.style-trip .pillars li:hover { rotate: 0deg; translate: 0 -6px; }
+.style-trip .pillars .num, .style-trip .faq-item .num, .style-trip .nc-body time { font-family: var(--hand); font-style: normal; font-weight: 700; }
+.style-trip .faq-item .num { font-size: 24px; color: var(--rose); }
+.style-trip .nc-body time { font-size: 22px; }
+.style-trip .rr-feats li { background: var(--paper); border-radius: 4px; box-shadow: 0 0 0 1px var(--accent-soft); }
+.style-trip .rr-num { font-family: var(--hand); font-style: normal; font-weight: 700; font-size: clamp(64px, 8vw, 110px); color: var(--accent-soft); -webkit-text-stroke: 0; rotate: -6deg; display: inline-block; }
+.style-trip .rr-num::before { content: 'No.'; font-size: 0.42em; margin-right: 0.1em; }
+/* 筆記本內頁（原本的淺粉面板） */
+.style-trip .section.dark { background: repeating-linear-gradient(#fffdf8 0 35px, var(--pink-100) 35px 36.5px); box-shadow: var(--shadow), 0 0 0 1px rgba(90, 50, 70, 0.08); border-radius: 8px; }
+.style-trip .section.dark::before { content: ''; position: absolute; left: clamp(22px, 4vw, 60px); top: 0; bottom: 0; width: 2px; background: var(--pink-300); opacity: 0.6; }
+
+/* 頁首、子選單 */
+.style-trip .main-nav { border-radius: 10px; }
+.style-trip .main-nav > a, .style-trip .nav-branch { border-radius: 7px; }
+.style-trip .main-nav .is-active { rotate: -2deg; }
+.style-trip .b-subnav-links a.is-active { border-radius: 6px; rotate: -2deg; }
+.style-trip .branch-ribbon { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 55%, #fff) 0 14px, #fff 14px 28px); border-bottom: 0; }
+.style-trip .ribbon-now { background: #fff; padding: 2px 12px; border-radius: 4px; }
+
+/* 跑馬燈：斜紋紙膠帶 */
+.style-trip .marquee { border: 0; background: repeating-linear-gradient(135deg, var(--pink-100) 0 16px, #fff 16px 32px); rotate: -1deg; margin: 26px -2% 18px; padding: 10px 0; box-shadow: var(--shadow-sm); }
+.style-trip .marquee-track span { font-family: var(--hand) !important; font-style: normal; font-weight: 700; font-size: clamp(24px, 3vw, 38px); }
+.style-trip.is-cjk .marquee-track span:nth-child(even), .style-trip .marquee-track span:nth-child(even) { font-family: var(--serif) !important; font-size: clamp(18px, 2.2vw, 28px); }
+
+/* 內頁標題、訂房橫幅、頁尾 */
+.style-trip .page-hero .h-serif { display: inline; background: linear-gradient(transparent 64%, var(--pink-200) 64%, var(--pink-200) 92%, transparent 92%); padding: 0 0.15em; }
+.style-trip .page-hero .container::after { width: 64px; height: 64px; border-radius: 50%; background: none; border: 3px double var(--rose); animation: none; rotate: -14deg; margin-top: 22px; opacity: 0.75; }
+.style-trip .cta-band { border-radius: 8px; box-shadow: var(--shadow), 0 0 0 1px rgba(90, 50, 70, 0.08); rotate: -0.6deg; }
+.style-trip .site-footer::before { font-family: var(--hand); font-weight: 700; -webkit-text-stroke: 0; color: var(--pink-100); opacity: 1; rotate: -3deg; }
+.style-trip .footer-branch:nth-child(1) { rotate: -1deg; } .style-trip .footer-branch:nth-child(2) { rotate: 1deg; }
+.style-trip .book-panel { border-radius: 8px; background: var(--paper); }
+.style-trip .bo-cta { border-radius: 8px; }
+.style-trip .bl-intro { background: #fffdf8; }
+.style-trip .bl-intro-en { font-family: var(--hand); font-size: clamp(44px, 8vw, 96px); letter-spacing: 0.02em; margin-right: 0; }
+.style-trip .bl-progress { height: 4px; background: repeating-linear-gradient(90deg, var(--rose) 0 10px, transparent 10px 16px); }
+
+@media (max-width: 760px) {
+  .style-trip .bl-door-frame { height: 320px; }
+  .style-trip .bl-arch { rotate: 1deg; }
+  .style-trip .marquee { margin-left: 0; margin-right: 0; rotate: none; }
+  .style-trip .pillars li:nth-child(2) { translate: none; }
+}
+
+/* ==========================================================
+   v2：旅行手帳版專屬背景（米色點點方格紙）與房型頁版面
+   ========================================================== */
+body.style-trip {
+  --bg: #fbf5e8;
+  --bg-img: radial-gradient(circle, rgba(128, 96, 64, 0.26) 1.1px, transparent 1.5px);
+  --bg-size: 22px 22px;
+  --footer-bg: #f6eedc;
+  --pink-50: #fdf1e6;
+}
+.style-trip .site-footer { border-top: 2px dashed #d9c7a6; }
+.style-trip .bl-intro { background: #fbf5e8; }
+
+/* 房型頁：大拍立得、散落的小照片、手寫清單、行李吊牌 */
+.style-trip .room-head { align-items: flex-start; }
+.style-trip .room-chip { font-family: var(--hand); font-size: 22px; background: none; padding: 0; rotate: -2deg; }
+.style-trip.is-cjk .room-chip { font-family: var(--sans); font-size: 15px; }
+.style-trip .room-title { display: inline; background: linear-gradient(transparent 64%, var(--pink-200) 64%, var(--pink-200) 92%, transparent 92%); padding: 0 0.12em; }
+.style-trip .room-gallery { position: relative; }
+.style-trip .room-main { box-shadow: 0 0 0 14px #fff, var(--shadow); rotate: -1deg; margin: 14px 14px 30px; }
+.style-trip .room-gallery::before { content: ''; position: absolute; left: 50%; top: -4px; width: 150px; height: 34px; margin-left: -75px; background: var(--tape); rotate: -2deg; z-index: 6; }
+.style-trip .room-thumbs { overflow: visible; padding: 8px 6px 14px; }
+.style-trip .room-thumbs .swiper-slide { opacity: 1; background: #fff; padding: 5px 5px 16px; border-radius: 2px; box-shadow: var(--shadow-sm); rotate: -3deg; aspect-ratio: 1 / 1; overflow: visible; transition: rotate 0.4s var(--ease), translate 0.4s var(--ease); }
+.style-trip .room-thumbs .swiper-slide:nth-child(even) { rotate: 2.5deg; translate: 0 6px; }
+.style-trip .room-thumbs .swiper-slide-thumb-active { rotate: 0deg; translate: 0 -6px; box-shadow: var(--shadow), 0 0 0 2px var(--accent); }
+.style-trip .room-thumbs img { z-index: 0; border-radius: 1px; }
+.style-trip .rm-count { font-family: var(--hand); font-size: 22px; font-weight: 700; background: #fff6c9; border-radius: 3px; rotate: 3deg; }
+.style-trip .rd-summary { display: block; background: #fff6c9; padding: 26px 24px 22px; box-shadow: var(--shadow-sm); rotate: -0.8deg; position: relative; color: var(--ink); font-size: clamp(20px, 2.1vw, 26px); }
+.style-trip .rd-summary::before { content: ''; position: absolute; left: 50%; top: -12px; width: 96px; height: 26px; margin-left: -48px; background: var(--tape); rotate: 2deg; }
+.style-trip .rd-sub { font-family: var(--hand); font-size: 32px; font-weight: 700; color: var(--accent); }
+.style-trip.is-cjk .rd-sub { font-family: var(--serif); font-size: 24px; }
+.style-trip .rd-sub::after { height: 0; border-top: 2px dashed var(--accent-soft); background: none; }
+.style-trip .feat-grid { display: block; columns: 2; column-gap: 34px; background: repeating-linear-gradient(#fffdf8 0 43px, #f1d9e0 43px 44.5px); padding: 0 22px 0 46px; border-radius: 6px; box-shadow: var(--shadow-sm), 0 0 0 1px rgba(90, 50, 70, 0.08); position: relative; }
+.style-trip .feat-grid::before { content: ''; position: absolute; left: 30px; top: 0; bottom: 0; width: 2px; background: var(--pink-300); opacity: 0.7; }
+.style-trip .feat-grid li { break-inside: avoid; background: none; box-shadow: none !important; border-radius: 0; padding: 0; height: 44.5px; gap: 10px; font-size: 15.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.style-trip .feat-grid li span { overflow: hidden; text-overflow: ellipsis; }
+.style-trip .feat-grid li::before { content: '✓'; font-family: var(--hand); font-weight: 700; font-size: 26px; line-height: 1; color: var(--rose); rotate: -8deg; }
+.style-trip .feat-grid li .ico { display: none; }
+.style-trip .feat-grid li:hover { translate: 6px 0; }
+.style-trip .rd-aside { padding-top: 26px; }
+.style-trip .book-card { rotate: 1.5deg; border-radius: 16px; background: var(--paper); padding-top: 54px; }
+.style-trip .book-card::before { background: var(--tape-2); }
+.style-trip .book-card::after { content: ''; position: absolute; left: 50%; top: 22px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.25), 0 0 0 3px var(--accent-soft); }
+.style-trip .bc-label { font-family: var(--hand); font-style: normal; font-size: 24px; font-weight: 700; }
+/* 房型列表頁：每個房型是手帳的一頁 */
+.style-trip .b-rooms .room-row { position: relative; padding: clamp(20px, 3vw, 40px); background: repeating-linear-gradient(#fffdf8 0 35px, #f4e3e8 35px 36.5px); border-radius: 8px; box-shadow: var(--shadow-sm), 0 0 0 1px rgba(90, 50, 70, 0.08); }
+.style-trip .b-rooms .room-row:nth-child(odd) { rotate: -0.5deg; }
+.style-trip .b-rooms .room-row:nth-child(even) { rotate: 0.5deg; }
+.style-trip .b-rooms .room-row + .room-row { margin-top: 56px; }
+@media (max-width: 760px) {
+  .style-trip .feat-grid { columns: 1; }
+  .style-trip .room-main { margin: 12px 10px 24px; box-shadow: 0 0 0 9px #fff, var(--shadow); }
+  .style-trip .b-rooms .room-row { rotate: none !important; }
+}
+
+/* v3：歪斜的照片與紙膠帶不可超出畫面 */
+.style-trip .marquee { margin-left: 0; margin-right: 0; }
+.style-trip .bl-hero-media > .bl-badge { right: 0; }
+@media (max-width: 760px) {
+  .style-trip .philo-img, .style-trip .rr-img, .style-trip .room-row.is-flip .rr-img, .style-trip .bl-arch, .style-trip .loc-map, .style-trip .cta-band { rotate: none; }
+  .style-trip .rr-img { margin: 0 6px; }
+  .style-trip .bl-door-frame, .style-trip .bl-door:nth-of-type(2) .bl-door-frame { rotate: -1deg; }
+}
+
+/* v4：設施清單文字太長時換行（不可用「…」截斷），每一行仍對齊橫線 */
+.style-trip .feat-grid li { height: auto; min-height: 44.5px; white-space: normal; overflow: visible; align-items: flex-start; line-height: 44.5px; }
+.style-trip .feat-grid li span { overflow: visible; }
+.style-trip .feat-grid li::before { line-height: 44.5px; }
+/* 越南文的聲調符號手寫字體不支援，改用一般字體，避免字形混雜 */
+.style-trip.lang-vi { --hand: var(--sans); }
+.style-trip.lang-vi .eyebrow, .style-trip.lang-vi .link-arrow, .style-trip.lang-vi .rd-sub { font-size: 17px; rotate: none; }
+.style-trip.lang-vi .rd-sub { font-family: var(--serif); font-size: 24px; }

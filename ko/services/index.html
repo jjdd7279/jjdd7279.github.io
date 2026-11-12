@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>서비스｜리오 호텔</title>
   <meta name="description" content="리오 호텔은 타이베이 중심에 잔첸관(중정구 옌핑남로, 북문 인근)과 시먼관(시먼딩) 두 곳을 운영합니다. 친절한 서비스, 쾌적한 객실, 합리적인 가격, 24시간 프런트.">
-  <meta name="theme-color" content="#141214">
+  <meta name="theme-color" content="#fff5f8">
   <meta property="og:type" content="website">
   <meta property="og:title" content="서비스｜리오 호텔">
   <meta property="og:description" content="리오 호텔은 타이베이 중심에 잔첸관(중정구 옌핑남로, 북문 인근)과 시먼관(시먼딩) 두 곳을 운영합니다. 친절한 서비스, 쾌적한 객실, 합리적인 가격, 24시간 프런트.">
@@ -22,21 +22,39 @@
   <link rel="alternate" hreflang="ko" href="https://jjdd7279.github.io/ko/services/">
   <link rel="alternate" hreflang="th" href="https://jjdd7279.github.io/th/services/">
   <link rel="alternate" hreflang="fil" href="https://jjdd7279.github.io/fil/services/">
+  <link rel="alternate" hreflang="id" href="https://jjdd7279.github.io/id/services/">
+  <link rel="alternate" hreflang="ms" href="https://jjdd7279.github.io/ms/services/">
+  <link rel="alternate" hreflang="vi" href="https://jjdd7279.github.io/vi/services/">
   <link rel="alternate" hreflang="x-default" href="https://jjdd7279.github.io/services/">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/img/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/vendor/lenis/lenis.css">
-  <link rel="stylesheet" href="/vendor/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/vendor/photoswipe/photoswipe.css">
-  <link rel="stylesheet" href="/css/site.css?v=25">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,400;1,500&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="/css/bloom.css?v=10">
+  <script>(function(){var L=["classic","bloom","mag","city","trip"],D='random',P=false,k='lio_style',s,q=(location.search.match(/[?&]style=([a-z]+)/)||[])[1];
+try{s=sessionStorage.getItem(k)}catch(e){}
+if(L.indexOf(q)>-1)s=q;
+if(L.indexOf(s)<0)s=L.indexOf(D)>-1?D:L[Math.floor(Math.random()*L.length)];
+try{sessionStorage.setItem(k,s)}catch(e){}
+var p=location.pathname,h=location.hash;
+if((s==='classic')!==P){location.replace((P?(p.replace(/^\/classic(?=\/|$)/,'')||'/'):'/classic'+p)+'?style='+s+h);return}
+if(q&&history.replaceState)history.replaceState(null,'',p+h);
+window.__style=s;
+if(!P&&s!=='bloom')document.write('<link rel="stylesheet" href="/css/style-'+s+'.css?v=9">');
+})()</script>
+
   <style>:root { --serif: 'Noto Serif KR', serif; --sans: 'Noto Sans KR', 'Noto Sans TC', sans-serif; }</style>
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.gsap)document.documentElement.classList.remove('js')},2500)</script>
+
   
 </head>
-<body class="page-services lang-ko">
+<body class="page-services lang-ko is-cjk">
+<script>document.body.className+=' style-'+(window.__style||'bloom')</script>
 <a class="skip-link" href="#main">본문 바로가기</a>
 
 <header class="site-header" id="siteHeader">
@@ -89,7 +107,7 @@
         <svg class="caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
       </button>
       <div class="lang-panel">
-        <a href="/services" lang="zh-Hant-TW" class="">繁體中文</a><a href="/zh-CN/services" lang="zh-Hans-CN" class="">简体中文</a><a href="/en/services" lang="en" class="">English</a><a href="/ja/services" lang="ja" class="">日本語</a><a href="/ko/services" lang="ko" class="is-active">한국어</a><a href="/th/services" lang="th" class="">ไทย</a><a href="/fil/services" lang="fil" class="">Filipino</a>
+        <a href="/services" lang="zh-Hant-TW" class="">繁體中文</a><a href="/zh-CN/services" lang="zh-Hans-CN" class="">简体中文</a><a href="/en/services" lang="en" class="">English</a><a href="/ja/services" lang="ja" class="">日本語</a><a href="/ko/services" lang="ko" class="is-active">한국어</a><a href="/th/services" lang="th" class="">ไทย</a><a href="/fil/services" lang="fil" class="">Filipino</a><a href="/id/services" lang="id" class="">Bahasa Indonesia</a><a href="/ms/services" lang="ms" class="">Bahasa Melayu</a><a href="/vi/services" lang="vi" class="">Tiếng Việt</a>
       </div>
     </div>
     
@@ -121,7 +139,7 @@
     <a href="/ko/faq">자주 묻는 질문</a>
     <a href="/ko/contact">문의하기</a>
   </nav>
-  <div class="m-langs"><a href="/services" class="">繁體中文</a><a href="/zh-CN/services" class="">简体中文</a><a href="/en/services" class="">English</a><a href="/ja/services" class="">日本語</a><a href="/ko/services" class="is-active">한국어</a><a href="/th/services" class="">ไทย</a><a href="/fil/services" class="">Filipino</a></div>
+  <div class="m-langs"><a href="/services" class="">繁體中文</a><a href="/zh-CN/services" class="">简体中文</a><a href="/en/services" class="">English</a><a href="/ja/services" class="">日本語</a><a href="/ko/services" class="is-active">한국어</a><a href="/th/services" class="">ไทย</a><a href="/fil/services" class="">Filipino</a><a href="/id/services" class="">Bahasa Indonesia</a><a href="/ms/services" class="">Bahasa Melayu</a><a href="/vi/services" class="">Tiếng Việt</a></div>
   <div class="m-contact">
     <a href="tel:0223145296"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>잔첸관　02-2314-5296</a><a href="tel:0223889855"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>시먼관　02-2388-9855</a>
   </div>
@@ -144,7 +162,7 @@
   <div class="container narrow svc-intro" data-reveal>
     <p class="eyebrow">OUR SERVICES</p>
     <h2 class="h-serif">세심한 서비스와 완비된 시설</h2>
-    <p class="body-text">두 지점 모두 24시간 프런트, 무료 짐 보관, 매일 객실 청소, 무료 초고속 Wi-Fi를 제공합니다. 관광객과 출장객 모두 타이베이 중심에서 편안한 숙박을 즐기실 수 있습니다.</p>
+    <p class="body-text">두 지점 모두 24시간 프런트, 무료 짐 보관, 매일 객실 청소, 무료 Wi-Fi를 제공합니다. 관광객과 출장객 모두 타이베이 중심에서 편안한 숙박을 즐기실 수 있습니다.</p>
   </div>
 </section>
 
@@ -197,7 +215,7 @@
         <p class="rr-num" data-reveal>05</p>
         <span class="svc-icon" data-reveal><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r=".8"/></svg></span>
         <h2 class="h-serif" data-reveal>무료 기본 시설</h2>
-        <p class="body-text" data-reveal>전 객실 무료 초고속 Wi-Fi, 개별 냉난방, HD 케이블 TV를 갖추어 휴식과 업무 모두 편안합니다.</p>
+        <p class="body-text" data-reveal>호텔 전 구역에서 무료 Wi-Fi를 이용하실 수 있으며, 객실에는 개별 조절 냉방(난방 없음), HD 케이블 TV, 전기 주전자, 무료 생수, 커피·티백이 준비되어 있습니다.</p>
       </div>
     </article>
     
@@ -308,13 +326,31 @@
   </div>
 </div>
 
-<div class="page-fade" id="pageFade" aria-hidden="true"><img src="/img/logo-mark.svg" alt=""></div>
 
-<script src="/vendor/gsap/gsap.min.js"></script>
-<script src="/vendor/gsap/ScrollTrigger.min.js"></script>
-<script src="/vendor/lenis/lenis.min.js"></script>
-<script src="/vendor/swiper/swiper-bundle.min.js"></script>
-<script type="module" src="/js/site.js?v=7"></script>
+
+<details class="lio-styles" id="lioStyles">
+  <summary aria-label="스타일"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5 1-1.5 2-1.5h2a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></svg><span>스타일</span></summary>
+  <div><a href="?style=classic" data-style="classic" rel="nofollow">클래식</a><a href="?style=bloom" data-style="bloom" rel="nofollow">블룸</a><a href="?style=mag" data-style="mag" rel="nofollow">매거진</a><a href="?style=city" data-style="city" rel="nofollow">타이베이 시티</a><a href="?style=trip" data-style="trip" rel="nofollow">여행 노트</a></div>
+</details>
+<style>
+.lio-styles{position:fixed;left:12px;bottom:12px;z-index:240;display:flex;align-items:center;max-width:calc(100vw - 84px);border-radius:22px;background:#fff;border:1px solid #f0c6d6;box-shadow:0 6px 20px rgba(160,60,100,.2);font:500 13px/1.2 'Noto Sans TC',sans-serif;color:#4d4046;letter-spacing:.03em}
+.lio-styles summary{display:flex;align-items:center;gap:6px;padding:10px 12px;cursor:pointer;list-style:none;white-space:nowrap;color:#b0145f}
+.lio-styles summary::-webkit-details-marker{display:none}
+.lio-styles div{display:flex;flex-wrap:wrap;gap:2px;padding:4px 6px 4px 0}
+.lio-styles a{padding:7px 10px;border-radius:999px;text-decoration:none;color:#4d4046;white-space:nowrap}
+.lio-styles a:hover{background:#fff0f5}
+.lio-styles a.on{background:#c2185b;color:#fff}
+@media (max-width:760px){.lio-styles{bottom:70px}.lio-styles:not([open]) summary span{display:none}.lio-styles[open]{align-items:flex-start;flex-direction:column}.lio-styles[open] div{padding:0 8px 8px}}
+</style>
+<script>(function(){var d=document.getElementById('lioStyles');if(!d)return;if(innerWidth>=900)d.open=true;var a=d.querySelectorAll('a');for(var i=0;i<a.length;i++)if(a[i].getAttribute('data-style')===window.__style)a[i].className='on'})()</script>
+
+
+<script src="/vendor/gsap/gsap.min.js" defer></script>
+<script src="/vendor/gsap/ScrollTrigger.min.js" defer></script>
+<script src="/vendor/gsap/SplitText.min.js" defer></script>
+
+<script type="module" src="/js/bloom.js?v=5"></script>
+
 </body>
 </html>
 

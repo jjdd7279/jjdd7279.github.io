@@ -1,0 +1,193 @@
+/* ==========================================================
+   台北城市版：首頁手繪地圖、站牌與車票風格、霓虹線條標題
+   疊加在 bloom.css 之上，只改外觀。
+   ========================================================== */
+body.style-city {
+  --r-lg: 18px; --r-md: 12px;
+  --ink: #26202a; --ink-2: #4d4452; --ink-3: #7a7080;
+  --shadow: 0 14px 34px -16px rgba(120, 60, 110, 0.35); --shadow-sm: 0 6px 16px -8px rgba(120, 60, 110, 0.3);
+}
+.style-city .bl-blobs i:nth-child(2) { background: radial-gradient(circle, #e8f3fb 0%, rgba(255, 255, 255, 0) 68%); }
+
+/* 文字：粗黑體 */
+.style-city .h-serif, .style-city .rc-name, .style-city .bp-name, .style-city .nc-title, .style-city .oc-title, .style-city .bo-name, .style-city .bc-room, .style-city .rd-sub, .style-city .book-panel h2, .style-city .fb-name, .style-city .facts dd, .style-city .b-subnav-name { font-family: var(--sans); font-weight: 700; letter-spacing: 0.02em; }
+.style-city .h-serif { line-height: 1.35; }
+/* 小標：站牌代碼 */
+.style-city .eyebrow { font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: var(--accent); padding: 3px 12px; border-radius: 6px; }
+.style-city .eyebrow .dot { background: #fff; width: 6px; height: 6px; }
+
+/* 霓虹招牌標題（館別色實心字＋柔光，進場時閃一下） */
+.style-city .bl-hero-title, .style-city .cc-title, .style-city .page-hero .h-serif, .style-city .cta-inner .h-serif { font-family: var(--sans); font-weight: 700; color: var(--accent); text-shadow: 0 0 18px color-mix(in srgb, var(--accent) 40%, transparent); letter-spacing: 0.06em; }
+.style-city .bl-hero-title { animation: cityNeon 3.2s 1.4s both; }
+@keyframes cityNeon { 0%, 6%, 10%, 16% { text-shadow: none; opacity: 0.55; } 3%, 8%, 13%, 20%, 100% { text-shadow: 0 0 18px color-mix(in srgb, var(--accent) 40%, transparent); opacity: 1; } }
+
+/* 按鈕：圓角方形 */
+.style-city .btn, .style-city .btn-book, .style-city .b-subnav-book, .style-city .bo-cta { border-radius: 12px; font-weight: 700; }
+.style-city .btn-line { border-width: 2px; }
+.style-city .link-arrow { font-weight: 700; }
+
+/* 卡片：車票（虛線框＋左側色條） */
+.style-city .facts > div, .style-city .news-card, .style-city .offer-card, .style-city .bp-card, .style-city .ci-branch, .style-city .footer-branch, .style-city .book-card, .style-city .loc-teaser, .style-city .book-option, .style-city .faq-item { box-shadow: none; border: 2px dashed var(--accent-soft); background: #fff; }
+.style-city .facts > div:hover, .style-city .news-card:hover, .style-city .offer-card:hover, .style-city .bp-card:hover, .style-city .book-option:hover, .style-city .faq-item[open] { box-shadow: var(--shadow); border-style: solid; border-color: var(--accent); }
+.style-city .book-card, .style-city .loc-teaser, .style-city .ci-branch, .style-city .footer-branch { border-left: 8px solid var(--accent); border-left-style: solid; }
+.style-city .feat-grid li, .style-city .loc-list li, .style-city .rr-feats li, .style-city .pillars li { border-radius: 10px; }
+.style-city .section.dark { background: #fff; box-shadow: none; border: 2px dashed var(--pink-200); }
+
+/* 頁首與館別子選單：捷運路線圖 */
+.style-city .main-nav { border-radius: 14px; }
+.style-city .main-nav > a, .style-city .nav-branch, .style-city .lang-btn { border-radius: 10px; font-weight: 500; }
+.style-city .branch-ribbon { border-bottom: 2px dashed var(--accent-soft); }
+.style-city .ribbon-switch { border-radius: 8px; }
+.style-city .b-subnav { border-top: 0; border-bottom: 0; }
+.style-city .b-subnav-links { position: relative; gap: 0; padding: 0 4px; }
+.style-city .b-subnav-links::before { content: ''; position: absolute; left: 14px; right: 14px; top: 50%; height: 4px; margin-top: 13px; border-radius: 4px; background: var(--accent-soft); }
+.style-city .b-subnav-links a { position: relative; background: none !important; color: var(--ink-2); padding: 4px 22px 18px; font-weight: 700; border-radius: 0; }
+.style-city .b-subnav-links a::after { content: ''; position: absolute; left: 50%; bottom: 3px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #fff; border: 3px solid var(--accent-soft); transition: transform 0.4s var(--ease), border-color 0.3s; }
+.style-city .b-subnav-links a:hover::after { border-color: var(--accent); }
+.style-city .b-subnav-links a.is-active { color: var(--accent); }
+.style-city .b-subnav-links a.is-active::after { border-color: var(--accent); background: var(--accent); transform: scale(1.25); box-shadow: 0 0 0 4px #fff, 0 0 0 5.5px var(--accent); }
+.style-city .bl-progress { height: 5px; background: var(--accent); }
+
+/* 館別主視覺：圓角相框＋站牌 */
+.style-city .bl-arch { border-radius: 26px; box-shadow: 0 0 0 8px #fff, 0 0 0 10px var(--accent), var(--shadow); }
+.style-city .bl-hero.is-sub .bl-arch { border-radius: 22px; }
+.style-city .bl-hero-mini { border-radius: 18px; }
+.style-city .bl-hero-full { display: inline-block; padding: 3px 14px; border-radius: 8px; background: color-mix(in srgb, var(--accent-soft) 60%, #fff); color: var(--ink); font-size: 15px; font-weight: 700; letter-spacing: 0.08em; }
+.style-city .bl-hero-addr { margin-top: 14px; }
+.style-city .rc-img, .style-city .philo-img { border-radius: 18px; }
+.style-city .loc-map { border-radius: 22px; box-shadow: 0 0 0 8px #fff, 0 0 0 10px var(--accent), var(--shadow); }
+.style-city .rr-img img, .style-city .rr-img::before, .style-city .room-row.is-flip .rr-img img, .style-city .room-row.is-flip .rr-img::before { border-radius: 22px; }
+.style-city .rr-img::before { border-style: dashed; border-width: 2px; }
+.style-city .gallery-swiper .swiper-slide-active { border-radius: 26px; }
+.style-city .rr-num { font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 20px; -webkit-text-stroke: 0; color: #fff; background: var(--accent); display: inline-grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--accent); margin-bottom: 14px; }
+.style-city .rc-chip { border-radius: 6px; font-weight: 700; }
+.style-city .nc-img { border-radius: 14px; }
+
+/* 跑馬燈：車站跑馬燈看板 */
+.style-city .marquee { background: #fff; border: 0; border-top: 2px dashed var(--pink-200); border-bottom: 2px dashed var(--pink-200); padding: 12px 0; }
+.style-city .marquee-track span { font-family: var(--sans) !important; font-style: normal; font-weight: 700; font-size: clamp(16px, 1.8vw, 22px); color: var(--rose) !important; letter-spacing: 0.12em; }
+.style-city .marquee-track span::after { width: 10px; height: 10px; border-radius: 50%; background: none; border: 3px solid var(--pink-300); transform: none; }
+.style-city .page-hero .container::after { width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 4px solid var(--rose); animation: blPulse 2s infinite; --accent: var(--rose); }
+.style-city .cta-band { border-radius: 26px; box-shadow: none; border: 2px dashed var(--accent); }
+.style-city .site-footer::before { font-family: var(--sans); font-weight: 700; -webkit-text-stroke: 2px var(--pink-200); }
+
+/* ── 首頁：地圖 ── */
+.style-city .city-home { justify-content: flex-start; padding-top: calc(var(--header-h) + 4px); min-height: 0; padding-bottom: 36px; }
+/* 首頁照片帶、房型列：車票與站牌 */
+.style-city .hr-item { border-radius: 16px; border: 3px solid #fff; outline: 2px dashed var(--accent-soft); outline-offset: 2px; }
+.style-city .hr-item span { border-radius: 6px; font-weight: 700; }
+.style-city .hrm-card { box-shadow: none; border: 2px dashed var(--accent-soft); border-left: 8px solid var(--accent); }
+.style-city .hrm-card:hover { border-style: solid; border-color: var(--accent); box-shadow: var(--shadow-sm); }
+.style-city .pillars li { border: 2px dashed var(--pink-200); box-shadow: none; }
+.style-city .pillars .num { font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 18px; color: #fff; background: var(--rose); display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--rose); margin-bottom: 12px; }
+.style-city .home-about-grid { align-items: start; }
+/* 捷運路線風的區塊分隔線 */
+.style-city .section-head { position: relative; padding-bottom: 18px; }
+.style-city .section-head::after { content: ''; position: absolute; left: 0; bottom: 0; width: 120px; height: 6px; border-radius: 6px; background: linear-gradient(90deg, var(--accent) 0 60%, transparent 60% 68%, var(--accent-soft) 68%); }
+.style-city .bl-home-head { text-align: left; max-width: 1320px; width: 100%; margin: 0 auto; display: flex; align-items: center; gap: 8px 22px; flex-wrap: wrap; }
+.style-city .bl-home-title { font-family: var(--sans); font-weight: 700; font-size: clamp(26px, 3.2vw, 44px); letter-spacing: 0.08em; margin: 0; }
+.style-city .bl-home-tag { margin: 0 0 0 auto; font-weight: 500; }
+.city-grid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(18px, 2.5vw, 36px); max-width: 1320px; width: 100%; margin: 18px auto 0; align-items: stretch; }
+.city-map { margin: 0; padding: 14px 14px 8px; border-radius: 26px; background: #fff; border: 2px dashed var(--pink-300); box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.city-map svg { width: 100%; height: auto; flex: 1; display: block; overflow: visible; }
+.city-map figcaption { font-size: 12.5px; color: var(--ink-3); text-align: center; line-height: 1.5; padding-top: 4px; }
+.cm-road { stroke: var(--pink-200); stroke-width: 22; }
+.cm-road.thin { stroke-width: 11; stroke: var(--pink-100); }
+.cm-route { stroke: var(--ink-3); stroke-width: 4; opacity: 0; }
+html:not(.js) .cm-route { opacity: 1; stroke-dasharray: 2 12; }
+.cm-place > rect, .cm-place > circle, .cm-place > path:first-child { fill: #fff; stroke: var(--ink-3); stroke-width: 3; stroke-linejoin: round; }
+.cm-place .cm-ink { fill: none; stroke: var(--ink-3); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.cm-place text { font-family: var(--sans); font-size: 21px; font-weight: 500; fill: var(--ink-2); paint-order: stroke fill; stroke: #fff; stroke-width: 6px; stroke-linejoin: round; }
+.cm-place .cm-m { font-size: 20px; font-weight: 700; fill: var(--ink-3); stroke: none; }
+.cm-north path { fill: var(--pink-300) !important; stroke: none !important; }
+.cm-north text { font-size: 16px; font-weight: 700; fill: var(--ink-3); }
+.cm-link { cursor: pointer; }
+.cm-zhanqian { --accent: var(--zq); } .cm-ximen { --accent: var(--xm); }
+.cm-pin path { fill: var(--accent); stroke: #fff; stroke-width: 4; transition: transform 0.4s var(--ease); transform-origin: 0 0; }
+.cm-link:hover .cm-pin path, .cm-link:focus-visible .cm-pin path, .cm-link.is-hot .cm-pin path { transform: scale(1.22); }
+.cm-name { font-family: var(--sans); font-size: 34px; font-weight: 700; fill: var(--accent); paint-order: stroke fill; stroke: #fff; stroke-width: 9px; stroke-linejoin: round; }
+.cm-pulse { fill: var(--accent); opacity: 0.35; transform-origin: 0 0; animation: cityPulse 2.2s ease-out infinite; }
+.cm-ximen .cm-pulse { animation-delay: 1.1s; }
+@keyframes cityPulse { from { transform: scale(0.6); opacity: 0.5; } to { transform: scale(4.2); opacity: 0; } }
+
+.city-cards { display: grid; gap: clamp(14px, 2vw, 22px); grid-template-rows: 1fr 1fr; }
+.city-card { position: relative; display: grid; grid-template-columns: 34px minmax(0, 2fr) minmax(0, 3fr); border-radius: 22px; overflow: hidden; background: #fff; border: 2px solid var(--accent-soft); transition: border-color 0.3s, box-shadow 0.4s, translate 0.5s var(--ease); }
+.city-card:hover, .city-card.is-hot { border-color: var(--accent); box-shadow: var(--shadow); translate: 0 -6px; }
+.cc-line { background: var(--accent); display: grid; place-items: start center; padding-top: 14px; }
+.cc-line b { writing-mode: vertical-rl; font-family: var(--sans); font-size: 13px; letter-spacing: 0.2em; color: #fff; }
+.cc-img { display: block; overflow: hidden; min-height: 180px; }
+.cc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.city-card:hover .cc-img img { transform: scale(1.08); }
+.cc-body { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 14px 18px 16px; border-left: 2px dashed var(--accent-soft); }
+.cc-label { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: var(--accent); padding: 1px 10px; border-radius: 6px; }
+.cc-title { font-size: calc(clamp(30px, 3.2vw, 46px) * (0.5 + var(--k) * 0.5)); line-height: 1.3; }
+.cc-kicker { font-size: 15px; font-weight: 700; }
+.cc-addr { display: inline-flex; align-items: flex-start; gap: 6px; font-size: 13.5px; color: var(--ink-2); line-height: 1.55; margin-top: 2px; }
+.cc-addr .ico { color: var(--accent); margin-top: 0.2em; }
+.city-card .bl-door-actions { justify-content: flex-start; margin-top: 12px; }
+.city-card .bl-door-actions .btn { min-height: 42px; padding: 6px 16px; font-size: 14px; }
+
+@media (max-width: 1000px) {
+  .city-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .style-city .bl-home-tag { margin-left: 0; }
+  .city-map { padding: 8px 8px 6px; border-radius: 18px; }
+  .cm-place text { font-size: 30px; }
+  .cm-name { font-size: 46px; }
+  .city-card { grid-template-columns: 26px minmax(0, 1fr); }
+  .cc-img { grid-column: 2; height: 170px; min-height: 0; }
+  .cc-body { grid-column: 2; border-left: 0; border-top: 2px dashed var(--accent-soft); }
+  .cc-line { grid-row: 1 / span 2; }
+  .style-city .b-subnav-links a { padding: 4px 12px 18px; }
+}
+
+/* ==========================================================
+   v2：台北城市版專屬背景（淡藍街道圖）、藍色調與房型頁版面
+   ========================================================== */
+body.style-city {
+  --bg: #f2f8fb;
+  --bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320' fill='none' stroke='%238fbdd1' stroke-opacity='.3'%3E%3Cpath d='M0 60h320M0 170h320M0 262h320M70 0v320M190 0v320M268 0v320' stroke-width='1.4'/%3E%3Cpath d='M0 110h70M190 110h130M70 215h120M130 60v110M230 170v92' stroke-width='1' stroke-opacity='.22'/%3E%3Cpath d='M0 300 110 190 190 170 320 20' stroke-width='5' stroke-opacity='.16'/%3E%3Ccircle cx='70' cy='60' r='3' fill='%238fbdd1' fill-opacity='.35' stroke='none'/%3E%3Ccircle cx='190' cy='170' r='3' fill='%238fbdd1' fill-opacity='.35' stroke='none'/%3E%3Ccircle cx='268' cy='262' r='3' fill='%238fbdd1' fill-opacity='.35' stroke='none'/%3E%3C/svg%3E");
+  --bg-size: 320px;
+  --footer-bg: #eaf3f8;
+  /* 一般頁面改用藍色調；館別頁仍是各館的酒紅／琥珀色 */
+  --rose: #17708c; --rose-bright: #e4007f;
+  --pink-50: #eef6fa; --pink-100: #dcebf3; --pink-200: #bcd9e6; --pink-300: #8fbdd1;
+  --accent-soft: var(--pink-200);
+}
+body.style-city[data-theme='zhanqian'], .style-city [class*='-zhanqian'] { --accent-soft: var(--zq-soft); }
+body.style-city[data-theme='ximen'], .style-city [class*='-ximen'] { --accent-soft: var(--xm-soft); }
+.style-city .site-header.is-scrolled { box-shadow: 0 6px 24px -16px rgba(30, 90, 120, 0.5); }
+.style-city .lio-styles a.on { background: #17708c; }
+.style-city .city-map { background: #fbfdfe; border-color: var(--pink-300); }
+.style-city .cm-road { stroke: #c9dfea; }
+.style-city .cm-road.thin { stroke: #dfedf4; }
+
+/* 房型頁：站牌標題、路線圖設施、車票訂房卡 */
+.style-city .room-head { position: relative; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 18px 26px 18px 34px; border-radius: 18px; background: #fff; border: 3px solid var(--accent); box-shadow: var(--shadow-sm); overflow: hidden; }
+.style-city .room-head::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--accent); }
+.style-city .room-title { flex-basis: 100%; font-family: var(--sans); font-weight: 700; font-size: calc(clamp(32px, 4.8vw, 62px) * (0.5 + var(--k) * 0.5)); margin-top: 2px; }
+.style-city .room-chip { border-radius: 8px; background: var(--accent); color: #fff; }
+.style-city .room-chip .dot { background: #fff; }
+.style-city .room-main { border-radius: 24px; box-shadow: 0 0 0 6px #fff, 0 0 0 8px var(--accent), var(--shadow); }
+.style-city .room-thumbs { margin-top: 20px; }
+.style-city .room-thumbs .swiper-slide { border-radius: 10px; border: 2px dashed var(--accent-soft); opacity: 0.7; }
+.style-city .room-thumbs .swiper-slide-thumb-active { border-style: solid; border-color: var(--accent); box-shadow: none; }
+.style-city .rd-summary { font-family: var(--sans); font-weight: 700; display: block; padding: 16px 22px; border-radius: 14px; background: #fff; border-left: 8px solid var(--accent); box-shadow: var(--shadow-sm); font-size: clamp(19px, 2vw, 25px); }
+.style-city .rd-sub::after { height: 4px; border-radius: 4px; background: var(--accent-soft); }
+.style-city .feat-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; padding-top: 6px; }
+.style-city .feat-grid li { position: relative; background: none; box-shadow: none !important; padding: 13px 0 13px 40px; border-radius: 0; font-weight: 500; }
+.style-city .feat-grid li::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 5px; background: var(--accent-soft); }
+.style-city .feat-grid li::after { content: ''; position: absolute; left: 4px; top: 50%; width: 17px; height: 17px; margin-top: -8.5px; border-radius: 50%; background: #fff; border: 4px solid var(--accent); transition: transform 0.4s var(--ease), background-color 0.3s; }
+.style-city .feat-grid li:hover { translate: none; }
+.style-city .feat-grid li:hover::after { transform: scale(1.3); background: var(--accent); }
+.style-city .book-card { position: relative; border: 0; border-radius: 20px; background: #fff; box-shadow: var(--shadow), 0 0 0 2px var(--accent-soft); padding-bottom: 66px; -webkit-mask: radial-gradient(circle 13px at 0 132px, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 132px, transparent 98%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 13px at 0 132px, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 132px, transparent 98%, #000) right / 51% 100% no-repeat; }
+.style-city .book-card .bc-list { margin-top: 30px; padding-top: 22px; border-top: 2px dashed var(--accent-soft); }
+.style-city .book-card::after { content: ''; position: absolute; left: 28px; right: 28px; bottom: 20px; height: 30px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 5px, var(--ink) 5px 6px, transparent 6px 11px, var(--ink) 11px 14px, transparent 14px 17px); opacity: 0.75; }
+.style-city .bc-label { font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+/* 房型列表頁：每個房型是一張大車票 */
+.style-city .b-rooms .room-row { padding: clamp(18px, 2.6vw, 34px); border-radius: 26px; background: #fff; border: 2px dashed var(--accent-soft); border-left: 12px solid var(--accent); box-shadow: var(--shadow-sm); gap: clamp(20px, 4vw, 56px); }
+.style-city .b-rooms .room-row + .room-row { margin-top: 34px; }
+.style-city .b-rooms .rr-img::before { display: none; }
+.style-city .b-rooms .rr-img img, .style-city .b-rooms .room-row.is-flip .rr-img img { border-radius: 16px; box-shadow: none; }
+@media (max-width: 760px) { .style-city .feat-grid { grid-template-columns: 1fr; } }

@@ -1167,3 +1167,10 @@ main > .section:not(.dark), .room-top, .room-gallery, .b-gallery, main > .sectio
 .page-hero .h-serif { text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35); }
 
 .field .opt { color: var(--stone); font-size: 12px; letter-spacing: 0.05em; }
+
+/* 房型照片提醒：圖片僅供參考 */
+.photo-note { display: flex; align-items: flex-start; gap: 8px; margin: 18px 0 0; padding: 12px 18px; border-radius: 12px; border: 1.5px dashed rgba(156, 74, 108, 0.45); background: rgba(255, 255, 255, 0.8); color: #4a3f45; font-size: 14.5px; line-height: 1.75; letter-spacing: 0.02em; }
+.photo-note span { flex: none; font-weight: 700; }
+.photo-note.is-top { margin: 0 0 clamp(36px, 5vw, 64px); }
+.photo-note.is-short { display: inline-flex; margin-top: 26px; padding: 8px 16px; }
+.photo-note.is-wide { grid-column: 1 / -1; justify-self: center; margin-top: 0; }

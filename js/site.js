@@ -307,6 +307,6 @@ if (fade) {
     if (a.closest('#roomPswp')) return;
     e.preventDefault();
     fade.classList.add('is-on');
-    setTimeout(() => (location.href = url.href), 380);
+    setTimeout(() => (location.href = url.href), 240);
   });
 }

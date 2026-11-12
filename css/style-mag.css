@@ -1,0 +1,224 @@
+/* ==========================================================
+   雜誌版：超大字、粗欄線、方正照片錯落、硬邊陰影
+   疊加在 bloom.css 之上，只改外觀。
+   ========================================================== */
+body.style-mag {
+  --ink: #241a1f; --ink-2: #4c3e45; --ink-3: #7a6a72;
+  --r-lg: 0px; --r-md: 0px;
+  --shadow: 8px 8px 0 var(--accent-soft); --shadow-sm: 5px 5px 0 var(--accent-soft);
+  --rule: 2px solid var(--ink);
+}
+.style-mag *:not(.dot, .bl-top, .book-close, .plus, .nav-toggle, .svc-icon, .bl-badge, .bl-cursor), .style-mag *::before, .style-mag *::after { border-radius: 0 !important; }
+.style-mag .plus::before, .style-mag .plus::after { border-radius: 2px !important; }
+.style-mag .bl-blobs, .style-mag .rr-img::before, .style-mag .page-hero::before, .style-mag .page-hero .container::after { display: none; }
+
+/* 文字：大、緊、粗 */
+.style-mag .eyebrow { font-style: normal; font-weight: 600; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); }
+.style-mag .h-serif { font-weight: 600; font-size: calc(clamp(32px, 4.6vw, 68px) * (0.55 + var(--k) * 0.45)); line-height: 1.22; letter-spacing: 0.02em; }
+.style-mag .section-head { border-top: var(--rule); padding-top: 14px; }
+.style-mag .section-head .h-serif { margin-top: 18px; }
+.style-mag .section.dark { margin: 0; background: var(--pink-50); box-shadow: none; border-top: var(--rule); border-bottom: var(--rule); }
+.style-mag .body-text { font-size: 16.5px; }
+/* 內文段落第一個字放大（中文、日文除外的語言也適用） */
+.style-mag .philo-text .body-text:first-of-type::first-letter, .style-mag .rd-main > .body-text:first-of-type::first-letter { font-family: var(--serif); font-weight: 600; font-size: 3.4em; line-height: 1; float: left; margin: 0.06em 0.12em 0 0; color: var(--accent); }
+
+/* 按鈕：方形＋硬邊陰影 */
+.style-mag .btn { font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; min-height: 54px; }
+.style-mag .btn-solid, .style-mag .btn-branch, .style-mag .btn-book { box-shadow: 5px 5px 0 var(--ink); }
+.style-mag .btn-solid:hover, .style-mag .btn-branch:hover, .style-mag .btn-book:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--ink); }
+.style-mag .btn-line { border: var(--rule); background: #fff; }
+.style-mag .btn-line:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--accent); border-color: var(--ink); }
+.style-mag .link-arrow { font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background-size: 100% 2px; color: var(--ink); }
+.style-mag .link-arrow:hover { color: var(--accent); }
+
+/* 頁首 */
+.style-mag .site-header { border-bottom: var(--rule) !important; background: rgba(255, 250, 251, 0.95); }
+.style-mag .site-header.is-home { border-bottom-color: transparent !important; }
+.style-mag .main-nav { background: none; box-shadow: none; }
+.style-mag .main-nav > a, .style-mag .nav-branch { font-weight: 700; }
+.style-mag .lang-btn, .style-mag .nav-toggle { box-shadow: inset 0 0 0 2px var(--ink); }
+.style-mag .brand-en { font-size: 22px; letter-spacing: 0.04em; }
+.style-mag .drop-panel, .style-mag .lang-panel { border: var(--rule); box-shadow: 6px 6px 0 var(--accent-soft); }
+.style-mag .branch-ribbon { border-bottom: var(--rule); }
+.style-mag .b-subnav { border-top: 0; border-bottom: var(--rule); }
+.style-mag .b-subnav-book { border-width: 2px; }
+
+/* 卡片：黑線框＋滑過硬邊陰影 */
+.style-mag .facts > div, .style-mag .feat-grid li, .style-mag .loc-list li, .style-mag .pillars li, .style-mag .faq-item, .style-mag .news-card, .style-mag .offer-card, .style-mag .bp-card, .style-mag .ci-branch, .style-mag .footer-branch, .style-mag .contact-form-wrap, .style-mag .article, .style-mag .book-card, .style-mag .loc-teaser, .style-mag .od-meta > div, .style-mag .book-option { box-shadow: inset 0 0 0 2px var(--ink) !important; background: #fff; }
+.style-mag .facts > div:hover, .style-mag .feat-grid li:hover, .style-mag .news-card:hover, .style-mag .offer-card:hover, .style-mag .bp-card:hover, .style-mag .book-option:hover, .style-mag .pillars li:hover { box-shadow: inset 0 0 0 2px var(--ink), 8px 8px 0 var(--accent) !important; translate: -4px -4px; rotate: none; }
+.style-mag .contact-form-wrap, .style-mag .book-card { box-shadow: inset 0 0 0 2px var(--ink), 10px 10px 0 var(--accent-soft) !important; }
+.style-mag .rr-feats li { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.style-mag .field input:not([type='radio']), .style-mag .field textarea, .style-mag .radio span { border: var(--rule); background: #fff; }
+.style-mag .faq-item .num, .style-mag .pillars .num { font-style: normal; font-weight: 600; color: var(--accent); }
+
+/* 首頁：封面式排版 */
+.style-mag .bl-home { justify-content: flex-start; padding-top: calc(var(--header-h) + 8px); }
+.style-mag .bl-home-head { text-align: left; max-width: 1280px; width: 100%; margin: 0 auto; }
+.style-mag .bl-home-head .eyebrow { display: flex; width: 100%; border-top: var(--rule); border-bottom: var(--rule); padding: 7px 0; justify-content: space-between; }
+.style-mag .bl-home-head .eyebrow::after { content: 'VOL. 02 — TWO HOTELS'; }
+.style-mag .bl-home-title { font-size: calc(clamp(46px, 10.5vw, 168px) * (0.45 + var(--k) * 0.55)); line-height: 1.08; letter-spacing: 0; margin: 10px 0 0 -0.04em; white-space: nowrap; }
+.style-mag:not(.is-cjk) .bl-home-title { letter-spacing: -0.03em; }
+.style-mag .bl-home-tag { font-size: clamp(15px, 1.5vw, 19px); font-weight: 500; border-left: 4px solid var(--rose); padding-left: 14px; margin-top: 12px; }
+.style-mag .bl-doors { max-width: 1280px; gap: clamp(24px, 6vw, 96px); margin-top: clamp(28px, 5vh, 56px); align-items: start; }
+.style-mag .bl-door { align-items: flex-start; text-align: left; position: relative; }
+.style-mag .bl-door:nth-of-type(2) { margin-top: clamp(40px, 9vw, 130px); }
+.style-mag .bl-door-frame { height: clamp(280px, 52vh, 560px); }
+.style-mag .bl-door-pane { box-shadow: 12px 12px 0 var(--accent-soft) !important; transition: box-shadow 0.4s, translate 0.4s var(--ease); }
+.style-mag .bl-door:hover .bl-door-pane { box-shadow: 18px 18px 0 var(--accent) !important; translate: -6px -6px; }
+.style-mag .bl-door-no { left: auto; right: -0.08em; top: -0.62em; width: auto; padding: 0; background: none; font-style: italic; font-weight: 500; font-size: clamp(80px, 11vw, 170px); line-height: 1; color: #fffafb; -webkit-text-stroke: 2px var(--accent); paint-order: stroke fill; z-index: 3; }
+.style-mag .bl-door-info { align-items: flex-start; margin-top: 26px; border-top: var(--rule); padding-top: 12px; width: 100%; }
+.style-mag .bl-door-label { font-style: normal; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.style-mag .bl-door-title { font-size: calc(clamp(44px, 6.4vw, 96px) * (0.5 + var(--k) * 0.5)); letter-spacing: 0.02em; line-height: 1.15; margin-right: 0; }
+.style-mag .bl-door-kicker { font-weight: 700; }
+.style-mag .bl-door-actions { justify-content: flex-start; margin-top: 18px; }
+.style-mag .bl-home-badge { left: auto; right: 0; top: -9vw; transform: none; }
+.style-mag .bl-home-badge p { display: none; }
+.style-mag .bl-badge { box-shadow: 0 0 0 2px var(--ink), 6px 6px 0 var(--accent-soft); }
+
+/* 館別主視覺：巨大標題壓在照片上，白色描邊保持清楚 */
+.style-mag .bl-hero { padding-top: clamp(32px, 5vw, 72px); }
+.style-mag .bl-hero-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.style-mag .bl-hero-text { position: relative; z-index: 3; }
+.style-mag .bl-hero-title { font-size: calc(clamp(64px, 12.5vw, 196px) * var(--k)); line-height: 1.02; letter-spacing: 0; white-space: nowrap; margin: 4px -30vw 10px -0.04em; -webkit-text-stroke: 12px #fffafb; paint-order: stroke fill; }
+.style-mag:not(.is-cjk) .bl-hero-title { letter-spacing: -0.03em; }
+.style-mag .bl-hero-full { font-weight: 700; border-top: var(--rule); padding-top: 10px; display: inline-block; }
+.style-mag .bl-arch { box-shadow: 14px 14px 0 var(--accent-soft) !important; height: min(70vh, 640px); }
+.style-mag .bl-hero-mini { box-shadow: 0 0 0 6px #fffafb, 0 0 0 8px var(--ink) !important; bottom: -5%; }
+.style-mag .bl-hero.is-sub .bl-hero-title { font-size: calc(clamp(44px, 7vw, 110px) * var(--k)); margin-right: -10vw; }
+.style-mag .bl-hero.is-sub .bl-arch { height: clamp(210px, 34vh, 340px); }
+.style-mag .philo-img, .style-mag .loc-map { box-shadow: 14px 14px 0 var(--pink-200) !important; }
+.style-mag .room-main { box-shadow: 14px 14px 0 var(--accent-soft); }
+
+/* 房型卡片：橫向滑過（電腦版由程式加上 is-h） */
+.style-mag .room-grid { counter-reset: rm; }
+.style-mag .room-grid .room-card:nth-child(3n + 2) { margin-top: 0; }
+.style-mag .room-card { text-align: left; counter-increment: rm; }
+.style-mag .rc-img { aspect-ratio: 4 / 5; box-shadow: 8px 8px 0 var(--accent-soft) !important; }
+.style-mag .room-card:hover .rc-img { box-shadow: 12px 12px 0 var(--accent) !important; transform: translate(-4px, -4px); }
+.style-mag .rc-chip { left: 0; top: 0; transform: none; font-weight: 700; box-shadow: inset 0 0 0 2px var(--ink); }
+.style-mag .rc-body { align-items: flex-start; border-top: var(--rule); margin-top: 20px; padding-top: 10px; }
+.style-mag .rc-body::before { content: 'N° 0' counter(rm); font-family: var(--en); font-weight: 600; font-size: 14px; letter-spacing: 0.1em; color: var(--accent); }
+.style-mag .rc-en { font-style: normal; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12.5px; }
+.style-mag .rc-name { font-size: clamp(24px, 2.6vw, 36px); }
+.style-mag .room-grid.is-h { display: flex; width: max-content; gap: 48px; will-change: transform; }
+.style-mag .room-grid.is-h .room-card { width: min(44vw, 600px); flex: none; }
+.style-mag .room-grid.is-h .rc-img { aspect-ratio: 4 / 3; }
+.style-mag .rr-img img { box-shadow: 12px 12px 0 var(--accent-soft); }
+.style-mag .room-row.is-flip .rr-img img { box-shadow: -12px 12px 0 var(--accent-soft); }
+.style-mag .rr-num { font-style: italic; font-weight: 500; font-size: clamp(90px, 12vw, 180px); -webkit-text-stroke: 2px var(--accent); margin-bottom: -0.1em; }
+.style-mag .gallery-swiper .swiper-slide-active { box-shadow: 12px 12px 0 var(--accent-soft); }
+.style-mag .g-prev, .style-mag .g-next, .style-mag .rm-prev, .style-mag .rm-next { box-shadow: inset 0 0 0 2px var(--ink); }
+.style-mag .g-progress { height: 2px; background: var(--pink-200); }
+
+/* 首頁照片帶、理念、房型列 */
+.style-mag .home-ribbon { border-bottom: var(--rule); padding-bottom: 34px; }
+.style-mag .hr-item { box-shadow: 6px 6px 0 var(--accent-soft); }
+.style-mag .hr-item:hover { box-shadow: 10px 10px 0 var(--accent); translate: -4px -4px; }
+.style-mag .hr-item span { box-shadow: inset 0 0 0 2px var(--ink); font-weight: 700; color: var(--ink); }
+.style-mag .hrm-card { box-shadow: inset 0 0 0 2px var(--ink) !important; }
+.style-mag .hrm-card:hover { box-shadow: inset 0 0 0 2px var(--ink), 6px 6px 0 var(--accent) !important; translate: -3px -3px; }
+.style-mag .home-pillars .num { font-size: 72px; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--rose); }
+.style-mag .home-pillars strong { font-size: 26px; color: var(--ink); }
+.style-mag .home-about .h-serif { font-size: calc(clamp(34px, 5.4vw, 80px) * (0.55 + var(--k) * 0.45)); }
+
+/* 跑馬燈：超大空心字 */
+.style-mag .marquee { border-top: var(--rule); border-bottom: var(--rule); padding: 6px 0; background: #fff; }
+.style-mag .marquee-track { animation-duration: 60s; }
+.style-mag .marquee-track span { font-style: italic; font-weight: 600; font-size: clamp(40px, 7vw, 104px); line-height: 1.25; color: transparent !important; -webkit-text-stroke: 1.5px var(--rose); padding: 0 28px; }
+.style-mag .marquee-track span:nth-child(even) { font-style: normal; color: var(--ink) !important; -webkit-text-stroke: 0; }
+.style-mag .marquee-track span::after { width: 22px; height: 22px; background: var(--rose); transform: rotate(45deg); margin-left: 56px; }
+
+/* 其他 */
+.style-mag .cta-band { margin-left: 0; margin-right: 0; box-shadow: none; border-top: var(--rule); border-bottom: var(--rule); }
+.style-mag .cta-inner .h-serif { font-size: calc(clamp(34px, 6vw, 88px) * (0.5 + var(--k) * 0.5)); }
+.style-mag .page-hero { text-align: left; padding: clamp(36px, 5vw, 72px) 0 0; }
+.style-mag .page-hero .container { border-bottom: var(--rule); padding-bottom: 18px; }
+.style-mag .page-hero .h-serif { font-size: calc(clamp(54px, 11vw, 170px) * (0.4 + var(--k) * 0.6)); line-height: 1.05; letter-spacing: 0; margin-left: -0.04em; }
+.style-mag .site-footer { background: #fff; border-top: var(--rule); }
+.style-mag .site-footer::before { -webkit-text-stroke: 0; color: var(--pink-100); opacity: 1; font-style: italic; }
+.style-mag .footer-bottom { border-top: var(--rule); }
+.style-mag .book-panel { box-shadow: 0 0 0 2px var(--ink), 14px 14px 0 var(--pink-300); }
+.style-mag .bo-cta { text-transform: uppercase; letter-spacing: 0.08em; }
+.style-mag .bl-intro { background: #fffafb; }
+.style-mag .bl-intro-en { font-size: clamp(40px, 9vw, 120px); letter-spacing: 0; margin-right: 0; font-style: italic; }
+.style-mag .bl-progress { height: 5px; background: var(--rose); }
+.style-mag .bl-top { border: var(--rule); box-shadow: 4px 4px 0 var(--accent-soft); }
+.style-mag .bl-cursor { background: var(--ink); mix-blend-mode: normal; }
+::view-transition-old(root) { animation-duration: 0.18s; }
+
+@media (max-width: 1000px) {
+  .style-mag .bl-hero-title { margin-right: 0; white-space: normal; -webkit-text-stroke: 0; }
+  .style-mag .bl-home-title { white-space: normal; }
+}
+@media (max-width: 760px) {
+  .style-mag .bl-home-head .eyebrow::after { display: none; }
+  .style-mag .bl-door:nth-of-type(2) { margin-top: 30px; }
+  .style-mag .bl-door-frame { height: 320px; }
+  .style-mag .bl-home-badge { display: none; }
+  .style-mag .bl-door-pane, .style-mag .bl-arch, .style-mag .rr-img img, .style-mag .philo-img, .style-mag .loc-map, .style-mag .room-main { box-shadow: 7px 7px 0 var(--accent-soft) !important; }
+  .style-mag .room-row.is-flip .rr-img img { box-shadow: 7px 7px 0 var(--accent-soft) !important; }
+}
+
+/* ==========================================================
+   v2：雜誌版專屬背景（暖白紙＋雜誌欄線）與房型頁版面
+   ========================================================== */
+body.style-mag {
+  --bg: #fffdf8;
+  --bg-img: linear-gradient(90deg, rgba(36, 26, 31, 0.05) 1px, transparent 1px);
+  --bg-size: 12.5vw 100%;
+  --footer-bg: #fff;
+}
+.style-mag .section.dark { background: #fdeef2; }
+.style-mag .bl-door-no, .style-mag .bl-hero-title { -webkit-text-stroke-color: var(--bg); }
+.style-mag .bl-door-no { color: var(--bg); -webkit-text-stroke-color: var(--accent); }
+
+/* 房型頁：像雜誌內頁——超大房名、引言、規格表 */
+.style-mag .room-top { border-bottom: var(--rule); padding-bottom: 18px; margin-bottom: 26px; }
+.style-mag .room-head { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 6px 22px; }
+.style-mag .room-chip { background: var(--ink); color: #fff; font-size: 12.5px; letter-spacing: 0.14em; }
+.style-mag .room-chip .dot { background: #fff; }
+.style-mag .room-title { flex-basis: 100%; font-size: calc(clamp(50px, 9.6vw, 150px) * (0.45 + var(--k) * 0.55)); line-height: 1.04; letter-spacing: 0; margin-left: -0.04em; }
+.style-mag .room-main .swiper-slide { aspect-ratio: 21 / 10; }
+.style-mag .room-thumbs .swiper-slide { opacity: 1; filter: grayscale(1); transition: filter 0.4s; }
+.style-mag .room-thumbs .swiper-slide-thumb-active { filter: none; box-shadow: inset 0 0 0 4px var(--ink); }
+.style-mag .rm-count { background: var(--ink); color: #fff; font-weight: 600; }
+.style-mag .rm-count b { color: var(--accent-soft); }
+.style-mag .rd-grid { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); }
+.style-mag .rd-aside { order: -1; }
+.style-mag .rd-summary { position: relative; display: block; font-size: clamp(26px, 3.2vw, 44px); line-height: 1.35; color: var(--ink); padding: 34px 0 22px; border-top: var(--rule); border-bottom: 1px solid var(--ink); }
+.style-mag .rd-summary::before { content: '“'; position: absolute; left: -0.06em; top: -0.18em; font-family: var(--en); font-size: 3.4em; line-height: 1; color: var(--accent); }
+.style-mag .rd-sub { font-size: 14px; letter-spacing: 0.24em; text-transform: uppercase; }
+.style-mag .rd-sub::after { height: 2px; background: var(--ink); }
+.style-mag .feat-grid { grid-template-columns: 1fr 1fr; gap: 0 32px; counter-reset: ft; margin-top: 8px; }
+.style-mag .feat-grid li { counter-increment: ft; box-shadow: none !important; background: none; padding: 14px 2px; border-bottom: 1px solid rgba(36, 26, 31, 0.35); font-weight: 500; }
+.style-mag .feat-grid li:hover { translate: 6px 0; box-shadow: none !important; }
+.style-mag .feat-grid li::before { content: counter(ft, decimal-leading-zero); font-family: var(--en); font-weight: 600; font-size: 14px; color: var(--accent); min-width: 26px; }
+.style-mag .book-card { padding: 0 0 28px; }
+.style-mag .book-card .bc-label { background: var(--ink); color: #fff; padding: 10px 24px; font-style: normal; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; font-size: 13px; }
+.style-mag .book-card .bc-label .dot { background: #fff; }
+.style-mag .book-card > *:not(.bc-label) { margin-left: 24px; margin-right: 24px; }
+.style-mag .book-card .bc-room { font-size: 28px; margin-top: 18px; }
+.style-mag .book-card .btn.full { width: calc(100% - 48px); }
+/* 房型列表頁：一列一則「報導」 */
+.style-mag .b-rooms .room-row { padding-top: clamp(40px, 6vw, 80px); border-top: var(--rule); }
+.style-mag .b-rooms .room-row + .room-row { margin-top: clamp(40px, 6vw, 80px); }
+.style-mag .b-rooms .rr-body .h-serif { font-size: calc(clamp(38px, 5.6vw, 84px) * (0.5 + var(--k) * 0.5)); }
+@media (max-width: 1000px) {
+  .style-mag .rd-grid { grid-template-columns: minmax(0, 1fr); }
+  .style-mag .rd-aside { order: 0; }
+  .style-mag .feat-grid { grid-template-columns: 1fr; }
+}
+
+/* v3：橫向滑過的房型區不可撐寬頁面 */
+.style-mag.page-branch .section.dark { overflow: hidden; }
+
+/* v3：手機上子頁大標題不可超出畫面 */
+@media (max-width: 1000px) {
+  .style-mag .bl-hero.is-sub .bl-hero-title { margin-right: 0; white-space: normal; -webkit-text-stroke: 0; }
+}
+
+/* v4：平板／手機的館別主視覺改回上下排列 */
+@media (max-width: 1000px) {
+  .style-mag .bl-hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .style-mag .bl-hero-title { font-size: calc(clamp(52px, 15vw, 120px) * var(--k)); }
+}
